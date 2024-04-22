@@ -20,6 +20,7 @@ variable "extra_tags" {
   type    = map(any)
   default = {}
 }
+
 variable "private_ip_address_allocation" {
   type = string
   default = "Dynamic"

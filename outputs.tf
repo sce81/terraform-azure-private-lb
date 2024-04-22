@@ -9,11 +9,3 @@ output "lb_frontend_ip" {
   value = azurerm_lb.main.frontend_ip_configuration
 }
 
-output "public_ip" {
-  value = azurerm_public_ip.main.ip_address
-}
-
-output "public_fqdn" {
-  value = azurerm_public_ip.main.reverse_fqdn
-}
-

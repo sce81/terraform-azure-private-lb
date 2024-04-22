@@ -1,14 +1,4 @@
-//resource "azurerm_private_ip" "main" {
-//  name                = "${var.name}-private-ip"
-//  location            = data.azurerm_resource_group.main.location
-//  resource_group_name = data.azurerm_resource_group.main.name
-//  allocation_method   = "Static"
-//  domain_name_label   = "sce-${data.azurerm_resource_group.main.name}"
-//
-//  tags = merge(
-//    local.common_tags, var.extra_tags,
-//  )
-//}
+
 
 resource "azurerm_lb" "main" {
   name                = "${var.name}-private-lb"
@@ -21,6 +11,7 @@ resource "azurerm_lb" "main" {
     name  = "${var.name}-private-ip"
     zones = var.lb_zones
     private_ip_address_allocation = var.private_ip_address_allocation
+    subnet_id = var.lb_subnet_id
   }
   tags = merge(
     local.common_tags, var.extra_tags,
