@@ -22,6 +22,6 @@ variable "extra_tags" {
 }
 
 variable "private_ip_address_allocation" {
-  type = string
+  type    = string
   default = "Dynamic"
 }

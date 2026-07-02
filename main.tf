@@ -8,10 +8,10 @@ resource "azurerm_lb" "main" {
   sku_tier            = var.lb_sku_tier
 
   frontend_ip_configuration {
-    name  = "${var.name}-private-ip"
-    zones = var.lb_zones
+    name                          = "${var.name}-private-ip"
+    zones                         = var.lb_zones
     private_ip_address_allocation = var.private_ip_address_allocation
-    subnet_id = var.lb_subnet_id
+    subnet_id                     = var.lb_subnet_id
   }
   tags = merge(
     local.common_tags, var.extra_tags,
