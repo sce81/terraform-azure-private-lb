@@ -25,8 +25,8 @@ resource "azurerm_lb_rule" "example" {
   name                           = "${var.name}-LBRule"
   protocol                       = "Tcp"
   backend_address_pool_ids       = [azurerm_lb_backend_address_pool.main.id]
-  frontend_port                  = 22
-  backend_port                   = 22
+  frontend_port                  = var.source_port
+  backend_port                   = var.target_port
   frontend_ip_configuration_name = "${var.name}-private-ip"
 
 }
